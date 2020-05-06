@@ -1,1 +1,2 @@
-console.log('test main.js')
+var app = new App();
+app.start();
