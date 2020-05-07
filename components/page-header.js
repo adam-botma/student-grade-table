@@ -4,6 +4,7 @@ class PageHeader {
   }
 
   updateAverage(newAverage){
-    document.getElementById('average-grade').textContent=newAverage;
+    var roundedAverage = newAverage.toFixed(2);
+    document.getElementById('average-grade').textContent=roundedAverage;
   }
 }
