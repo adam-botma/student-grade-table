@@ -9,7 +9,6 @@ class GradeTable {
   }
 
   renderGradeRow(data, deleteGrade) {
-    // var tbody = this.tableElement.querySelector('tbody');
     var tableRow = document.createElement('tr');
     var nameElement = document.createElement('td');
     var courseElement = document.createElement('td');
@@ -25,16 +24,11 @@ class GradeTable {
     deleteButton.addEventListener('click', function(){ deleteGrade(data.id)});
     operationsElement.append(deleteButton);
     tableRow.append(nameElement, courseElement, gradeElement, operationsElement);
-    // tbody.append(tableRow);
     return tableRow;
 
   }
 
-
-
-
   updateGrades(grades) {
-
     var tbody = this.tableElement.querySelector('tbody');
     tbody.textContent = " ";
     if (!grades.length) {
@@ -43,18 +37,7 @@ class GradeTable {
       this.noGradesElement.className = 'd-none'
     }
     for (var i = 0; i < grades.length; i++) {
-      // var tableRow = document.createElement('tr');
-      // var nameElement = document.createElement('td');
-      // var courseElement = document.createElement('td');
-      // var gradeElement = document.createElement('td');
-
-      // nameElement.textContent = grades[i].name;
-      // courseElement.textContent = grades[i].course;
-      // gradeElement.textContent = grades[i].grade;
-
-      // tableRow.append(nameElement, courseElement, gradeElement);
       tbody.append(this.renderGradeRow(grades[i], this.deleteGrade));
-
     }
   }
 }

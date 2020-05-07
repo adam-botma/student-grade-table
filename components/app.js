@@ -22,9 +22,7 @@ class App {
       headers: { "X-Access-Token": "UEv1wvPc" },
       success: this.handleDeleteGradeSuccess,
       error: this.handleDeleteGradeError,
-
     })
-
   }
 
   handleDeleteGradeError(error){
@@ -47,12 +45,7 @@ class App {
       headers: { "X-Access-Token": "UEv1wvPc" },
       success: this.handleCreateGradeSuccess,
       error: this.handleCreateGradeError,
-
-
-
-
     })
-
   }
 
   handleCreateGradeError(error){
@@ -63,10 +56,10 @@ class App {
   this.getGrades();
   }
 
-
   handleGetGradesError (error){
     console.error(error);
   }
+
   handleGetGradesSuccess(grades){
     this.gradeTable.updateGrades(grades);
     var sum = 0;
@@ -76,7 +69,6 @@ class App {
     }
     var average = sum / grades.length;
     this.pageHeader.updateAverage(average);
-
   }
 
   getGrades () {
@@ -87,12 +79,11 @@ class App {
       success: this.handleGetGradesSuccess,
       error: this.handleGetGradesError,
     })
-
   }
-start(){
-  this.getGrades();
-  this.gradeForm.onSubmit(this.createGrade);
-  this.gradeTable.onDeleteClick(this.deleteGrade);
 
-}
+  start(){
+    this.getGrades();
+    this.gradeForm.onSubmit(this.createGrade);
+    this.gradeTable.onDeleteClick(this.deleteGrade);
+  }
 }
