@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +9,37 @@
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
+
 <body>
   <div class="container">
-  <header>
-    <h1>Student Grade Table</h1>
-  </header>
-  <div class='table-container'>
-    <table class="table table-striped table-bordered">
-      <thead class="thead-dark">
-        <tr>
-          <th>Student Name</th>
-          <th>Course</th>
-          <th>Grade</th>
-        </tr>
-      </thead>
-      <tbody>
+    <header class='row'>
+      <div class="col">
+        <h1>Student Grade Table</h1>
+      </div>
+      <div class="col d-flex justify-content-end align-items-end">
+        <h4>Average Grade <span id='average-grade' class="badge badge-secondary"></span></h4>
+      </div>
+    </header>
+    <div class='table-container'>
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
 
-      </tbody>
-    </table>
-  </div>
+        </tbody>
+      </table>
+    </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script src="components/app.js"></script>
   <script src="components/grade-table.js"></script>
+  <script src="components/page-header.js"></script>
   <script src="main.js"></script>
 </body>
+
 </html>
