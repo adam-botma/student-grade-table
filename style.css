@@ -1,27 +1,20 @@
-.container {
-  margin-top: 3rem;
-  padding: 0;
-}
-
-
-.table-container {
-
-  /* margin-top: 2rem; */
-}
-
-.input{
-  padding-left: 0;
-}
-
 .add{
   width: 40%;
+}
+
+.buttons{
+  margin: 0;
 }
 
 .cancel{
   margin-left: 1rem;
 }
 
-.buttons{
-  margin: 0;
+.container {
+  margin-top: 3rem;
+  padding: 0;
+}
 
+.input{
+  padding-left: 0;
 }
