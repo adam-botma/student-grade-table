@@ -12,8 +12,13 @@ onSubmit (createGrade){
 
 handleSubmit(event){
   event.preventDefault();
-  console.log("hi")
-  console.log(event);
+  var formData = new FormData(event.target);
+  var currentName = formData.get('name');
+  var currentCourse = formData.get('course');
+  var currentGrade = formData.get('grade');
+  this.createGrade(currentName, currentCourse, currentGrade);
+  event.target.reset();
+
 }
 
 
