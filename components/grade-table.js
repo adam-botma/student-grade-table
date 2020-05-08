@@ -13,17 +13,19 @@ class GradeTable {
     var nameElement = document.createElement('td');
     var courseElement = document.createElement('td');
     var gradeElement = document.createElement('td');
+    var createdByElement = document.createElement('td');
     var operationsElement = document.createElement('td');
     var deleteButton = document.createElement('button');
 
     nameElement.textContent = data.name;
     courseElement.textContent = data.course;
     gradeElement.textContent = data.grade;
+    createdByElement.textContent = data.createdBy;
     deleteButton.textContent = 'Delete';
     deleteButton.className = 'btn btn-danger'
     deleteButton.addEventListener('click', function(){ deleteGrade(data.id)});
     operationsElement.append(deleteButton);
-    tableRow.append(nameElement, courseElement, gradeElement, operationsElement);
+    tableRow.append(nameElement, courseElement, gradeElement, createdByElement, operationsElement);
     return tableRow;
 
   }

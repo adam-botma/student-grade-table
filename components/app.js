@@ -1,25 +1,25 @@
 class App {
-  constructor(gradeTable, pageHeader, gradeForm){
+  constructor(gradeTable, pageHeader, gradeForm, currentInstructor){
     this.gradeTable = gradeTable;
     this.pageHeader = pageHeader;
+    this.gradeForm = gradeForm;
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
-    this.gradeForm = gradeForm;
     this.createGrade = this.createGrade.bind(this);
     this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
     this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this);
     this.deleteGrade = this.deleteGrade.bind(this);
     this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this);
     this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this);
+    this.currentInstructor = currentInstructor;
   }
 
   deleteGrade(id){
     var deleteAddress = 'https://sgt.lfzprototypes.com/api/grades/'+id;
-    console.log(deleteAddress);
     $.ajax({
       method: "DELETE",
       url: deleteAddress,
-      headers: { "X-Access-Token": "UEv1wvPc" },
+      headers: { "X-Access-Token": this.currentInstructor },
       success: this.handleDeleteGradeSuccess,
       error: this.handleDeleteGradeError,
     })
@@ -42,7 +42,7 @@ class App {
         "course": course,
         "grade" : grade,
       },
-      headers: { "X-Access-Token": "UEv1wvPc" },
+      headers: { "X-Access-Token": this.currentInstructor },
       success: this.handleCreateGradeSuccess,
       error: this.handleCreateGradeError,
     })
@@ -63,7 +63,6 @@ class App {
   handleGetGradesSuccess(grades){
     this.gradeTable.updateGrades(grades);
     var sum = 0;
-    console.log(grades);
     for (var i= 0; i < grades.length; i++){
       sum += grades[i].grade;
     }
@@ -75,7 +74,7 @@ class App {
     $.ajax({
       method: "GET",
       url: "https://sgt.lfzprototypes.com/api/grades",
-      headers: { "X-Access-Token": "UEv1wvPc"},
+      headers: { "X-Access-Token": this.currentInstructor},
       success: this.handleGetGradesSuccess,
       error: this.handleGetGradesError,
     })
@@ -87,3 +86,8 @@ class App {
     this.gradeTable.onDeleteClick(this.deleteGrade);
   }
 }
+
+
+//obi-wan api key = L7qTB57q
+// yoda api key = 1tjRQsLl
+// mace windu api key = Bmow0Cw5

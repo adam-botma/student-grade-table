@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
-
 <body>
   <div class="container">
     <header class='row'>
@@ -29,6 +27,7 @@
               <th>Student Name</th>
               <th>Course</th>
               <th>Grade</th>
+              <th>Created By</th>
               <th>Operations</th>
             </tr>
           </thead>
@@ -60,10 +59,9 @@
           <div class="form-group row align-items-end buttons">
             <button type="submit" class="btn btn-dark ml-auto add" >Add</button>
             <button type="cancel" class="btn btn-outline-dark cancel">Clear</button>
+            <button type="button" id='settings' class="btn btn-outline-dark cancel"><i class="fas fa-cog"></i></button>
           </div>
-
         </form>
-
       </div>
     </div>
   </div>
@@ -72,7 +70,7 @@
   <script src="components/grade-table.js"></script>
   <script src="components/page-header.js"></script>
   <script src="components/grades-form.js"></script>
+  <script src="components/instructors.js"></script>
   <script src="main.js"></script>
 </body>
-
 </html>
